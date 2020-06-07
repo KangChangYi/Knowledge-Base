@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你不知道的 JavaScript 下卷知识点整理（一） | 特辣的博客</title>
+    <meta name="description" content="Step by step">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.98303e98.css" as="style"><link rel="preload" href="/assets/js/app.9bc466e0.js" as="script"><link rel="preload" href="/assets/js/2.bc0da09f.js" as="script"><link rel="preload" href="/assets/js/22.dfdf7735.js" as="script"><link rel="prefetch" href="/assets/js/10.7f9b2c60.js"><link rel="prefetch" href="/assets/js/11.b7ec9672.js"><link rel="prefetch" href="/assets/js/12.44e7cb04.js"><link rel="prefetch" href="/assets/js/13.c977ea8f.js"><link rel="prefetch" href="/assets/js/14.3ca8fada.js"><link rel="prefetch" href="/assets/js/15.49fb8b22.js"><link rel="prefetch" href="/assets/js/16.f77d8666.js"><link rel="prefetch" href="/assets/js/17.793a78ce.js"><link rel="prefetch" href="/assets/js/18.e720ae74.js"><link rel="prefetch" href="/assets/js/19.b7f857dc.js"><link rel="prefetch" href="/assets/js/20.20a62293.js"><link rel="prefetch" href="/assets/js/21.04f12faf.js"><link rel="prefetch" href="/assets/js/23.9b43db7d.js"><link rel="prefetch" href="/assets/js/24.c06fb8e6.js"><link rel="prefetch" href="/assets/js/25.95bb47b2.js"><link rel="prefetch" href="/assets/js/26.6396c0d9.js"><link rel="prefetch" href="/assets/js/27.ae927678.js"><link rel="prefetch" href="/assets/js/28.1fb3c5c9.js"><link rel="prefetch" href="/assets/js/29.990fdc34.js"><link rel="prefetch" href="/assets/js/3.62dac171.js"><link rel="prefetch" href="/assets/js/30.53047d86.js"><link rel="prefetch" href="/assets/js/31.71fcf53c.js"><link rel="prefetch" href="/assets/js/32.9f8fcea9.js"><link rel="prefetch" href="/assets/js/33.75bbec8e.js"><link rel="prefetch" href="/assets/js/34.1fa01da7.js"><link rel="prefetch" href="/assets/js/35.10349e7e.js"><link rel="prefetch" href="/assets/js/36.3d117ae6.js"><link rel="prefetch" href="/assets/js/37.b4bf6da0.js"><link rel="prefetch" href="/assets/js/38.5b279f27.js"><link rel="prefetch" href="/assets/js/39.a98c8a8e.js"><link rel="prefetch" href="/assets/js/4.6c23dc08.js"><link rel="prefetch" href="/assets/js/40.47d6e933.js"><link rel="prefetch" href="/assets/js/41.62ed983b.js"><link rel="prefetch" href="/assets/js/42.62a3fbfa.js"><link rel="prefetch" href="/assets/js/5.6ad3abc9.js"><link rel="prefetch" href="/assets/js/6.cdcc581a.js"><link rel="prefetch" href="/assets/js/7.d57a0c3f.js"><link rel="prefetch" href="/assets/js/8.cc13f77a.js"><link rel="prefetch" href="/assets/js/9.c7fc3fdb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.98303e98.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">特辣的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/KangChangYi" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://kangchangyi.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/KangChangYi" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://kangchangyi.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/article/JavaScript/JavaScript数据结构和算法数组整理.html" class="sidebar-link">JavaScript 数据结构和算法—数组整理</a></li><li><a href="/article/JavaScript/作用域和闭包（一）.html" class="sidebar-link">作用域和闭包（一）</a></li><li><a href="/article/JavaScript/作用域和闭包（二）.html" class="sidebar-link">作用域和闭包（二）</a></li><li><a href="/article/JavaScript/你不知道的JavaScript下卷（一）.html" class="active sidebar-link">你不知道的 JavaScript 下卷知识点整理（一）</a></li><li><a href="/article/JavaScript/你不知道的JavaScript下卷（二）.html" class="sidebar-link">你不知道的 JavaScript 下卷知识点整理（二）</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>快速查阅</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>服务端入门ing</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>其他</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>每月总结</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>浏览器</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>计算机网络</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="你不知道的-javascript-下卷知识点整理（一）"><a href="#你不知道的-javascript-下卷知识点整理（一）" aria-hidden="true" class="header-anchor">#</a> 你不知道的 JavaScript 下卷知识点整理（一）</h2> <p>图书馆没有该系列的上卷和中卷，只借到了下卷，不过上卷之前在网上看过别人整理的笔记，也算看了一半，下次再回头来看上中吧。</p> <h1 id="前言"><a href="#前言" aria-hidden="true" class="header-anchor">#</a> 前言</h1> <blockquote><p><img src="https://raw.githubusercontent.com/KangChangYi/Picture-library/master/you-dont-know-javascript.png" alt=""></p></blockquote> <p>这本 《你不知道的 JavaScript 下卷》 是我启动巩固 js 基础之路看的第一本书。在看完书之后写知识点整理的初衷，是为了再次回顾书籍内容加深印象，但我发现该系列的上卷和中卷好像才是我需要的😭，因为这本书上很多知识点都只做简单介绍，详细内容在上卷和中卷里面（挠头）。</p> <h1 id="第一章-深入编程"><a href="#第一章-深入编程" aria-hidden="true" class="header-anchor">#</a> 第一章 深入编程</h1> <p>第一章是编程基础中的基础，不再整理了，直接从第二章开始。</p> <h1 id="第二章-深入-javascript"><a href="#第二章-深入-javascript" aria-hidden="true" class="header-anchor">#</a> 第二章 深入 JavaScript</h1> <h2 id="_2-1-值与类型"><a href="#_2-1-值与类型" aria-hidden="true" class="header-anchor">#</a> 2.1 值与类型</h2> <p>以下是 JavaScript 中的 7 种内置类型：</p> <ul><li>字符串 String</li> <li>数字 Number</li> <li>布尔型 Boolean</li> <li>Null</li> <li>Undefined</li> <li>对象 Object</li> <li>符号 Symbol ( ES6 )</li></ul> <p>JavaScript 提供了一个 typeof 运算符，用来查看值的类型：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a<span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> a<span class="token punctuation">;</span>    <span class="token comment">// undefined</span>
+
+a <span class="token operator">=</span> <span class="token string">&quot;hello world&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> a<span class="token punctuation">;</span>    <span class="token comment">// string</span>
+
+a <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> a<span class="token punctuation">;</span>    <span class="token comment">// number</span>
+
+a <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> a<span class="token punctuation">;</span>    <span class="token comment">// boolean</span>
+
+a <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> a<span class="token punctuation">;</span>    <span class="token comment">// object 由于二进制前三位为 0 会被判断为 object ，而 null 是全 0 ，其实这是 js 的 bug</span>
+
+a <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> a<span class="token punctuation">;</span>    <span class="token comment">// undefined</span>
+
+a <span class="token operator">=</span> <span class="token punctuation">{</span>b<span class="token punctuation">:</span><span class="token string">&quot;c&quot;</span><span class="token punctuation">}</span>
+<span class="token keyword">typeof</span> a     <span class="token comment">// object </span>
+</code></pre></div><h3 id="_2-1-1-对象"><a href="#_2-1-1-对象" aria-hidden="true" class="header-anchor">#</a> 2.1.1 对象</h3> <p>对象类型是指一个组合值，可为其设置属性，每个属性可以有不同的类型。
+可以通过  “点号” 或 “中括号” 来访问属性：</p> <div class="language-js extra-class"><pre class="language-js"><code>obj<span class="token punctuation">.</span>a
+obj<span class="token punctuation">.</span><span class="token punctuation">[</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">]</span>
+</code></pre></div><p>在JavaScript中，你应该吧 <strong>数组</strong> 和 <strong>函数</strong> 看作对象类型的特殊子类型，而不是内置类型。</p> <ul><li>数组 Array</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> arr<span class="token punctuation">;</span>    <span class="token comment">// object</span>
+</code></pre></div><ul><li>函数 Function</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">42</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">typeof</span> foo<span class="token punctuation">;</span>   <span class="token comment">// function</span>
+<span class="token keyword">typeof</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// number</span>
+</code></pre></div><p>内置对象：</p> <ul><li>String</li> <li>Number</li> <li>Boolean</li> <li>Object</li> <li>Function</li> <li>Array</li> <li>Date</li> <li>RegExp</li> <li>Error
+这些内置对象其实是一些内置函数，可以当作构造函数来使用（用 new 操作符）。</li></ul> <p>更多信息见 中卷 第一部分</p> <h3 id="_2-1-2-内置类型方法"><a href="#_2-1-2-内置类型方法" aria-hidden="true" class="header-anchor">#</a> 2.1.2 内置类型方法</h3> <p>举个例子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">&quot;hello world&quot;</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span>length  <span class="token comment">// 11</span>
+</code></pre></div><p>其中 a.length 就是内置类型方法， Js 会自动的将这个值为其对应的对象封装。</p> <p>字符串值可以封装为 String 对象，数字可封装为 Number 对象……</p> <p>length 就是封装在 a 原型中的方法。
+更多信息见 中卷 第一部分</p> <h3 id="_2-1-3-值的比较"><a href="#_2-1-3-值的比较" aria-hidden="true" class="header-anchor">#</a> 2.1.3 值的比较</h3> <ol><li>类型转换</li></ol> <ul><li>显示<br> <code>var a = &quot;42&quot;; var b = Number( a );</code></li> <li>隐示<br> <code>var a = &quot;42&quot;; var b = a * 1;</code></li></ul> <ol start="2"><li>真与假
+JavaScript 中 &quot;假&quot; 值的详细列表如下：</li></ol> <ul><li>“” (空字符串)</li> <li>0、-0、NaN (无效数字</li> <li>null、undefined</li> <li>false
+不在 &quot;假&quot; 值列表中的都是 “真” 值。</li></ul> <ol start="3"><li>相等</li></ol> <ul><li>== 检查值相等 ( 粗略相等 )</li> <li>=== 检查值与类型相等 ( 严格相等 )
+更多信息见 中卷 第一部分</li></ul> <h2 id="_2-2-变量"><a href="#_2-2-变量" aria-hidden="true" class="header-anchor">#</a> 2.2 变量</h2> <h3 id="函数作用域"><a href="#函数作用域" aria-hidden="true" class="header-anchor">#</a> 函数作用域</h3> <ol><li><p>提升
+无论 var 出现在作用域中的哪个位置，这个声明都属于整个作用域，在其中到处都可以访问。
+概念上 var 声明 “移动” 到了其所在作用域的最前面。</p></li> <li><p>嵌套作用域
+内层作用域可以访问外层，反之则不行。
+更多信息见 上卷 第一部分</p></li></ol> <h2 id="_2-3-条件判断"><a href="#_2-3-条件判断" aria-hidden="true" class="header-anchor">#</a> 2.3 条件判断</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span> a <span class="token operator">==</span> <span class="token number">42</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token number">2</span><span class="token punctuation">:</span>
+      <span class="token operator">...</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">10</span><span class="token punctuation">:</span>
+      <span class="token operator">...</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 三元表达式</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">(</span> b <span class="token operator">&gt;</span> <span class="token number">41</span> <span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">&quot;true&quot;</span> <span class="token punctuation">:</span> <span class="token string">&quot;false&quot;</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>   <span class="token comment">// &quot;true&quot;</span>
+</code></pre></div><p>更多信息见 中卷 第一部分</p> <h2 id="_2-4-严格模式"><a href="#_2-4-严格模式" aria-hidden="true" class="header-anchor">#</a> 2.4 严格模式</h2> <p>省略</p> <h2 id="_2-5-作为值的函数"><a href="#_2-5-作为值的函数" aria-hidden="true" class="header-anchor">#</a> 2.5 作为值的函数</h2> <p>函数本身可以作为其他函数的参数或者赋值给一个变量，又或者从其他函数传出。
+🤔：</p> <div class="language-js extra-class"><pre class="language-js"><code>    <span class="token keyword">var</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>更多信息见 上卷 第一部分</p> <h3 id="_2-5-1-立即执行函数表达式"><a href="#_2-5-1-立即执行函数表达式" aria-hidden="true" class="header-anchor">#</a> 2.5.1 立即执行函数表达式</h3> <p>IIFE</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token constant">IIFE</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>其中最外层的 (..) 是为了防止它成为普通函数声明。</p> <p>表达式最后的 () 类似于：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 使用 foo函数引用表达式，然后 () 执行它</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// IIFE函数表达式, () 执行它</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>IIFE 不会影响外部变量</li> <li>IIFE 可以有返回值：</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token constant">IIFE</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+x<span class="token punctuation">;</span>  <span class="token comment">// ..</span>
+</code></pre></div><h3 id="_2-5-2-闭包"><a href="#_2-5-2-闭包" aria-hidden="true" class="header-anchor">#</a> 2.5.2 闭包</h3> <p>可以将闭包看做：在函数运行完毕后继续访问这个函数作用域的一种方法</p> <p>闭包最主要的作用就是可以让函数外部访问函数内部</p> <p>简单举例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">makeAdder</span><span class="token punctuation">(</span> <span class="token parameter">x</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// x 是个内层变量</span>
+    <span class="token comment">// 内层函数 add() 使用 x,所以它外围有一个闭包</span>
+    <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span> <span class="token parameter">y</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> y <span class="token operator">+</span> x
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> add<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> plusOne <span class="token operator">=</span> <span class="token function">makeAdder</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> plusTen <span class="token operator">=</span> <span class="token function">makeAdder</span><span class="token punctuation">(</span> <span class="token number">10</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">plusOne</span><span class="token punctuation">(</span> <span class="token number">3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 4 &lt;-- 1 + 3</span>
+<span class="token function">plusOne</span><span class="token punctuation">(</span> <span class="token number">41</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 42 &lt;-- 1 + 41</span>
+
+<span class="token function">plusTen</span><span class="token punctuation">(</span> <span class="token number">13</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 23 &lt;-- 10 + 13</span>
+</code></pre></div><p>更多信息见 上卷 第一部分</p> <h2 id="_2-6-this-标识符"><a href="#_2-6-this-标识符" aria-hidden="true" class="header-anchor">#</a> 2.6 this 标识符</h2> <p>首先，this 标识符并不指向这个函数本身。
+举例🤔：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bar <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    bar<span class="token punctuation">:</span> <span class="token string">&quot;obj1&quot;</span><span class="token punctuation">,</span>
+    foo<span class="token punctuation">:</span> foo<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+bar obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    bar<span class="token punctuation">:</span> <span class="token string">&quot;obj2&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//-----</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// 全局的</span>
+obj1<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// &quot;obj1&quot;</span>
+<span class="token function">foo</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> obj2 <span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &quot;obj2&quot;</span>
+<span class="token keyword">new</span> <span class="token class-name">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// undefined</span>
+</code></pre></div><p>关于如何设置 this 有 4 条规则，上面代码最后 4 行展示了这 4 条规则：
+(1)在非严格模式下，foo()最后会将 this 设置为全局对象，在严格模式下，这是未定义的行为。
+(2) obj1.foo() 将 this 设置为对象 obj1。
+(3) foo.call(obj2) 将 this 设置为对象 obj2。
+(4) new foo() 将 this 设置为一个全新的空对象。
+更多信息见 上卷 第二部分</p> <h2 id="_2-7-原型"><a href="#_2-7-原型" aria-hidden="true" class="header-anchor">#</a> 2.7 原型</h2> <p>当 js 引用对象某个属性不存在时，js 将通过查找对象的原型链来找到这个属性。</p> <p>使用 Object.create() 内置方法来实现原型的链接</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span>
+    a<span class="token punctuation">:</span> <span class="token number">42</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 创建 bar 将其链接到 foo</span>
+<span class="token keyword">var</span> bar <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span> foo <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+bar<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token string">&quot;hello world&quot;</span><span class="token punctuation">;</span>
+
+bar<span class="token punctuation">.</span>b<span class="token punctuation">;</span>   <span class="token comment">// hello world</span>
+bar<span class="token punctuation">.</span>a<span class="token punctuation">;</span>   <span class="token comment">// 42</span>
+</code></pre></div><p>更多信息见 上卷 第二部分</p> <h2 id="_2-8-旧与新"><a href="#_2-8-旧与新" aria-hidden="true" class="header-anchor">#</a> 2.8 旧与新</h2> <h3 id="_2-8-1-polyfilling"><a href="#_2-8-1-polyfilling" aria-hidden="true" class="header-anchor">#</a> 2.8.1 polyfilling</h3> <h3 id="_2-8-2-transpiling"><a href="#_2-8-2-transpiling" aria-hidden="true" class="header-anchor">#</a> 2.8.2 transpiling</h3> <p>它是由 tansforming (转换) 和 compiling (编译) 组合而来的术语。</p> <ul><li><a href="https://babeljs.io/" target="_blank" rel="noopener noreferrer">Babel<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+从 ES6+ 编译到 ES5</li> <li><a href="https://github.com/google/traceur-compiler" target="_blank" rel="noopener noreferrer">Traceur<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+将 ES6、ES7 以及后续版本转换到 ES5</li></ul> <h2 id="_2-9-非-javascript"><a href="#_2-9-非-javascript" aria-hidden="true" class="header-anchor">#</a> 2.9 非 JavaScript</h2> <p>当你的代码在浏览器中运行时，将会有一个 document “宿主对象”。</p> <p>其实 document 的上的方法是由浏览器的 DOM 提供的指向内置方法的一个接口。
+在某些浏览器中它可能在JavaScript中，另外还包括 <code>alter( .. ); console.log( .. )</code></p> <h1 id="第三章——深入-你不知道的-javascript-系列"><a href="#第三章——深入-你不知道的-javascript-系列" aria-hidden="true" class="header-anchor">#</a> 第三章——深入 你不知道的 JavaScript 系列</h1> <p>详细介绍在本系列其他卷上</p> <h2 id="_3-1-作用域和闭包"><a href="#_3-1-作用域和闭包" aria-hidden="true" class="header-anchor">#</a> 3.1 作用域和闭包</h2> <p>见上卷第一部分</p> <h2 id="_3-2-this和对象原型"><a href="#_3-2-this和对象原型" aria-hidden="true" class="header-anchor">#</a> 3.2 this和对象原型</h2> <p>见上卷第二部分</p> <h2 id="_3-3-类型和语法"><a href="#_3-3-类型和语法" aria-hidden="true" class="header-anchor">#</a> 3.3 类型和语法</h2> <p>见中卷第一部分</p> <h2 id="_3-4-异步和性能"><a href="#_3-4-异步和性能" aria-hidden="true" class="header-anchor">#</a> 3.4 异步和性能</h2> <p>见中卷第二部分</p> <h2 id="_3-5-es6及更新版本"><a href="#_3-5-es6及更新版本" aria-hidden="true" class="header-anchor">#</a> 3.5 ES6及更新版本</h2> <p>见本文ES6</p> <p>完结...</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/article/JavaScript/作用域和闭包（二）.html" class="prev">
+          作用域和闭包（二）
+        </a></span> <span class="next"><a href="/article/JavaScript/你不知道的JavaScript下卷（二）.html">
+          你不知道的 JavaScript 下卷知识点整理（二）
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9bc466e0.js" defer></script><script src="/assets/js/2.bc0da09f.js" defer></script><script src="/assets/js/22.dfdf7735.js" defer></script>
+  </body>
+</html>
