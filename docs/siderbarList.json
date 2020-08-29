@@ -30,7 +30,6 @@
         "title": "其他",
         "children": [
             "./article/其他/学习方法梳理.md",
-            "./article/其他/学长的踩坑之路.md",
             "./article/其他/零碎知识点普及.md"
         ]
     },
@@ -41,7 +40,7 @@
         ]
     },
     {
-        "title": "服务端入门ing",
+        "title": "服务端入门",
         "children": [
             "./article/服务端入门ing/Linux入门.md",
             "./article/服务端入门ing/nginx入门.md"
@@ -65,7 +64,8 @@
             "./article/每月总结/2020-04月总结.md",
             "./article/每月总结/2020-05月总结.md",
             "./article/每月总结/2020-06月总结.md",
-            "./article/每月总结/2020-07月总结.md"
+            "./article/每月总结/2020-07月总结.md",
+            "./article/每月总结/2020-08月总结.md"
         ]
     },
     {
