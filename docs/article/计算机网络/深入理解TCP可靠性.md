@@ -1,4 +1,4 @@
-## 『深入 TCP/IP 系列』 TCP 的可靠性原理
+## 『深入 TCP/IP 系列』 TCP 可靠性原理
 
 ## <span id="top" style="color:#ec6611">前言</span>
 
