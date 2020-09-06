@@ -54,5 +54,8 @@
 + [图解http（一）](/article/计算机网络/图解http（一）.md)
 + [深入理解TCP可靠性](/article/计算机网络/深入理解TCP可靠性.md)
 
+## 自测题目集合
++ [TCP/IP自测题](/article/自测题目集合/TCPIP自测题.md)
+
 ## 记事本
 + [Node.js安装及环境配置教程](/article/记事本/Node.js安装及环境配置教程.md)
