@@ -14,6 +14,8 @@
 
 `single-spa` 也是通过这四个方法来控制子应用的生命周期的。
 
+![](/images/微前端/single-spa-vue.png)
+
 ## single-spa-vue 源码
 
 `single-spa-vue` 的源码非常少，只有 200 行不到，因为它也不需要实现什么额外功能，只需要暴露出四个控制生命周期函数即可。
@@ -103,7 +105,7 @@ export default function singleSpaVue(userOpts) {
   };
 }
 
-// bootstrap 方法，用户提供 loadRootComponent 方法，猜测是用来在 bootstrap 阶段提前加载后续需要渲染的组件的资源
+// bootstrap 方法，用户提供 loadRootComponent 方法，加载需要渲染的根组件，可以通过这种方式在 bootstrap 阶段对组件进行懒加载，而不是在注册时就加载。
 function bootstrap(opts) {
   if (opts.loadRootComponent) {
     return opts.loadRootComponent().then((root) => (opts.rootComponent = root));
@@ -252,7 +254,7 @@ function unmount(opts, mountedInstances, props) {
 到这里 `single-spa-vue` 的源码就结束了，很少也很简单，总结如下：
 
 + 通过 `single-spa-vue` 暴露出子应用的四个生命周期方法提供给 `single-spa` 使用
-+ `bootstrap` 方法，子应用挂载前可以做一些资源预加载、懒加载
++ `bootstrap` 方法，子应用挂载前可以做一些资源懒加载
 + `mount` 方法，挂载子应用
 + `update` 方法，更新子应用的属性
 + `unmount` 方法，卸载子应用
