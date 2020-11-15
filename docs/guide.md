@@ -24,10 +24,11 @@
 + [浏览器缓存](/article/浏览器/浏览器缓存.md)
 
 ## 计算机网络
-+ [三次握手四次挥手](/article/计算机网络/三次握手四次挥手.md)
-+ [图解http（一）](/article/计算机网络/图解http（一）.md)
++ [OSI七层模型](/article/计算机网络/OSI七层模型.md)
 + [深入理解TCP可靠性](/article/计算机网络/深入理解TCP可靠性.md)
 + [深入理解ARP工作流程](/article/计算机网络/深入理解ARP工作流程.md)
++ [TCP三次握手和四次挥手](/article/计算机网络/TCP三次握手和四次挥手.md)
++ [图解http（一）](/article/计算机网络/图解http（一）.md)
 
 ## 服务端
 + [Linux入门](/article/服务端/Linux入门.md)
