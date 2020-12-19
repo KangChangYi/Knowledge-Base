@@ -1,5 +1,7 @@
 ## 『深入 TCP/IP 系列』 ARP 的工作流程
 
+> 2020-10-25
+
 ## <span id="top" class="color-font">前言</span>
 
 本文是深入 TCP/IP 系列的第二篇文章，通过阅读本文可以解答以下问题：
