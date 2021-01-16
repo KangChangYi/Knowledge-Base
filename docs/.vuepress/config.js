@@ -5,7 +5,7 @@ module.exports = {
   base: "/",
   themeConfig: {
     nav: [
-      { text: "Guide", link: "./guide.md" },
+      { text: "Guide", link: "/guide.md" },
       {
         text: "GitHub",
         link: "https://github.com/KangChangYi",
