@@ -30,12 +30,9 @@
 + [深入理解ARP工作流程](/article/计算机网络/深入理解ARP工作流程.md)
 + [TCP三次握手和四次挥手](/article/计算机网络/TCP三次握手和四次挥手.md)
 + [图解http（一）](/article/计算机网络/图解http（一）.md)
-
 ## 服务端
 + [Linux入门](/article/服务端/Linux入门.md)
 + [nginx入门](/article/服务端/nginx入门.md)
-
-
 ## devOps
 + [jenkins 自动化部署博客](/article/devOps/jenkins自动化部署博客.md)
 + [jenkins 自动化部署博客 docker 版](/article/devOps/jenkins自动化部署博客docker版.md)
