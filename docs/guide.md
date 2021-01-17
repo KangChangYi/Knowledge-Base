@@ -38,6 +38,7 @@
 
 ## devOps
 + [jenkins 自动化部署博客](/article/devOps/jenkins自动化部署博客.md)
++ [jenkins 自动化部署博客 docker 版](/article/devOps/jenkins自动化部署博客docker版.md)
 
 ## 自测题目集合
 + [TCP/IP自测题](/article/自测题目集合/TCPIP自测题.md)
