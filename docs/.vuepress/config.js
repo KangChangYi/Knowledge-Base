@@ -1,7 +1,6 @@
 module.exports = {
   title: "KangChangYi",
   description: "Step by step",
-  // base: "/Knowledge-Base/",
   base: "/",
   themeConfig: {
     nav: [
@@ -12,7 +11,7 @@ module.exports = {
         target: "_blank",
       },
     ],
-    sidebarDepth: 0,
+    sidebarDepth: 2,
     sidebar: require("../siderbarList.json"),
   },
 };

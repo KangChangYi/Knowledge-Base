@@ -9,12 +9,6 @@
         ]
     },
     {
-        "title": "## devOps",
-        "path": [
-            "+ [jenkins自动化部署博客](/article/devOps/jenkins自动化部署博客.md)"
-        ]
-    },
-    {
         "title": "## JavaScript",
         "path": [
             "+ [JavaScript数据结构和算法数组整理](/article/JavaScript/JavaScript数据结构和算法数组整理.md)",
@@ -42,6 +36,8 @@
     {
         "title": "## 服务端",
         "path": [
+            "+ [jenkins自动化部署博客](/article/服务端/jenkins自动化部署博客.md)",
+            "+ [jenkins自动化部署博客](/article/服务端/jenkins自动化部署博客docker版.md)",
             "+ [Linux入门](/article/服务端/Linux入门.md)",
             "+ [nginx入门](/article/服务端/nginx入门.md)"
         ]

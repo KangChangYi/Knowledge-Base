@@ -1,8 +1,8 @@
-## 整理一篇完整的 CSS 选择器
+# 整理一篇完整的 CSS 选择器
 
 有时候遇到想用的选择器忘了什么作用，就还得去搜一下，干脆整理一波。
 
-### 常用选择器
+## 常用选择器
 
 | <div style="font-weight:bold">选择器</div> | <div style="font-weight:bold">名称</div> | <div style="font-weight:bold">描述</div> |
 |:-- |:-- |:-- |
@@ -11,7 +11,7 @@
 | <div style="color:#F05053">#idName</div> | id 选择器 | 通过元素 id 属性值选择 |
 | <div style="color:#F05053">.className</div> | 类选择器 | 通过元素 class 属性值选择 |
 
-### 选择器分组
+## 选择器分组
 
 使用 , 分隔选择器：
 ```
@@ -19,7 +19,7 @@ A , B { color: red }
 ```
 A 和 B 字色都变红
 
-### 关系选择器
+## 关系选择器
 
 | <div style="font-weight:bold">选择器</div> | <div style="font-weight:bold">名称</div> | <div style="font-weight:bold">描述</div> |
 |:-- |:-- |:-- |
@@ -32,7 +32,7 @@ A 和 B 字色都变红
 + 包含选择器会选择符合条件的所有元素，但子选择器只会选择符合条件的子元素
 + 相邻兄弟选择器必须是 E 的下一个元素 B，并且有相同的父元素
 
-### 属性选择器
+## 属性选择器
 下面 att 指的是元素的属性，比如 `<a>` 标签的 href 属性
 
 | <div style="font-weight:bold">选择器</div> | <div style="font-weight:bold">描述</div> |
@@ -50,7 +50,7 @@ A 和 B 字色都变红
 + 属性选择器可单独使用，比如：`[ att ]`
 + 相邻兄弟选择器必须是 E 的下一个元素 B，并且有相同的父元素
 
-### 伪类选择器
+## 伪类选择器
 
 | <div style="font-weight:bold">选择器</div> | <div style="font-weight:bold">描述</div> |
 |:-- |:-- |
@@ -86,7 +86,7 @@ A 和 B 字色都变红
     }
 ```
 
-### 伪元素选择器
+## 伪元素选择器
 
 | <div style="font-weight:bold">选择器</div> | <div style="font-weight:bold">描述</div> |
 |:-- |:-- |

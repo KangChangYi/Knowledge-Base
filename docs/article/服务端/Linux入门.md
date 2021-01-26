@@ -1,11 +1,11 @@
-## Linux 入门
+# Linux 基础
 
-### SSH 安装
+## SSH 安装
 为了方便的连接远程服务器，先安装一个 SSH，没有 Mac，Windows 推荐这个 [Mobaxterm](https://mobaxterm.mobatek.net/)。功能强大，也不花钱。
 
-### 在 CentOS 中 安装 node.js
+## 在 CentOS 中 安装 node.js
 
-#### 1. 下载 node.js 安装包
+### 1. 下载 node.js 安装包
 + 根目录新建一个 app 文件夹，用来存放应用程序。
 + 进入 node.js 官网，复制 node.js 的 Linux x64 位下载链接，在 shell 中输入：
 ```sh
@@ -17,7 +17,7 @@ wget https://npm.taobao.org/mirrors/node/v12.16.1/node-v12.16.1-linux-x64.tar.xz
 
 ![下载 node 安装包](/images/Linux/install-node.png)
 
-#### 2. 解压 node.js 安装包
+### 2. 解压 node.js 安装包
 + 下在完成后目录中多了一个 tar.xz 文件，下一步进行解压。
 + 解压 tar.xz 的压缩包分为两步
 ```sh 
@@ -32,7 +32,7 @@ wget https://npm.taobao.org/mirrors/node/v12.16.1/node-v12.16.1-linux-x64.tar.xz
 <!-- xz 压缩文件解压详解  gz 压缩文件解压详解 -->
 
 
-#### 3.  建立软连接
+### 3.  建立软连接
 这里遇到个血坑，在使用`ln -s` 建立软连接的时候，目标路径如果和源路径不同，则需要使用绝对路径，否则无法生效，所以建议在建立软连接的时候，总是使用绝对路径进行创建。
 
 + 建立软件列命令：
@@ -49,8 +49,8 @@ ln -s /app/node-v12.16.1-linux-x64/bin/npm /usr/local/bin
 <!-- ln -s 详解 -->
 
 
-### 在 Linux 中安装 nginx 
-#### 安装 nginx 的依赖
+## 在 Linux 中安装 nginx 
+### 安装 nginx 的依赖
 
 + 安装 pcre
 1. 在网上找到 pcre 安装包，下载并解压到目录中。

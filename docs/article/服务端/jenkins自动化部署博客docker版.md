@@ -1,4 +1,4 @@
-## 自动化部署博客(docker)
+# 自动化部署博客(docker)
 
 > 2021-1-17 17:45
 
@@ -6,7 +6,7 @@
 
 使用 github + jenkins + docker 自动化部署博客
 
-### 安装并运行 jenkins docker 镜像
+## 安装并运行 jenkins docker 镜像
 
 ```sh
 docker run \
@@ -32,7 +32,7 @@ docker run \
 
 **注意二**：官方的 jenkins 镜像版本太低，会有插件无法安装的问题，所以用 jenkins/jenkins 镜像，也是官方维护的。
 
-### 配置 jenkins
+## 配置 jenkins
 浏览器打开 `服务器地址+8080` 端口，等待 jenkins 安装完成，从挂载的目录下获取初始管理员密码，输入后即可进入，之后安装插件、创建用户。
 
 ![等待 jenkins 安装](/images/devOps/watingJenkins.png)
@@ -42,7 +42,7 @@ docker run \
 
 新建项目和使用 webhook 的过程和上次一样。
 
-### 配置 Node 环境
+## 配置 Node 环境
 首先安装 nodejs 插件，然后进入 `Manage Jenkins -> Global tool configuration`，进行如下配置：
 
 ![jenkins Nodejs 环境配置](/images/devOps/jenkins-nodeenv.png)
@@ -50,13 +50,13 @@ docker run \
 为任务添加 Nodejs 构建环境，否则会报 node not found。
 ![jenkins shell](/images/devOps/jenkins-shellnew.png)
 
-### 编写 shell 脚本
+## 编写 shell 脚本
 ![jenkins shell](/images/devOps/jenkins-shellnew.png)
 
-### dockerfile
+## dockerfile
 ![jenkins shell](/images/devOps/jenkins-dockerfile.png)
 
-### nginx.conf
+## nginx.conf
 ![jenkins shell](/images/devOps/jenkins-nginxconf.png)
 
 改完域名解析，再次大功告成 🎉🎉🎉

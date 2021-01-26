@@ -53,15 +53,10 @@
     {
         "title": "服务端",
         "children": [
+            "./article/服务端/jenkins自动化部署博客.md",
+            "./article/服务端/jenkins自动化部署博客docker版.md",
             "./article/服务端/Linux入门.md",
             "./article/服务端/nginx入门.md"
-        ]
-    },
-    {
-        "title": "devOps",
-        "children": [
-            "./article/devOps/jenkins自动化部署博客.md",
-            "./article/devOps/jenkins自动化部署博客docker版.md"
         ]
     },
     {

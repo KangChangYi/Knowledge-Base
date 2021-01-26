@@ -1,13 +1,12 @@
-
-## Vue 框架使用时需注意的风格规范及最佳实践
+# Vue 框架使用时需注意的风格规范及最佳实践
 
 > 本篇整理自《深入浅出 Vue.js》
 
-### 1. 给列表渲染设置属性 key
+## 1. 给列表渲染设置属性 key
 
 在列表渲染中，key 属性一共有两种作用。
 
-#### 1.1 提高 patch 操作性能
+### 1.1 提高 patch 操作性能
 
 key 的作用主要在 Vue 的虚拟 DOM 对比中，用来比较新旧虚拟节点，<span class="important-font">Vue 会优先比较虚拟节点的 TagName 和 key</span>。
 
@@ -19,12 +18,12 @@ key 的作用主要在 Vue 的虚拟 DOM 对比中，用来比较新旧虚拟节
 </div>
 ```
 
-#### 1.2 视图与数据项的不同步
+### 1.2 视图与数据项的不同步
 key 在列表渲染中的第二个作用就是，让列表的每一项都有一个唯一标识。
 
 在数据项的顺序发生变化时，Vue 不会移动 DOM 元素来匹配数据项的顺序，而是采用 “就地复用”，在原先的 DOM 元素上进行修改，所以，Vue 只会更新视图中 DOM 所显示的值，而不同步变化这个 DOM 本身，这就会产生一些意料之外的问题。
 
-### 2. 路由切换组件不变
+## 2. 路由切换组件不变
 在使用 Vue 的日常开发中，有一个比较经典的问题，就是当页面切换到同一个路由但不同参数的地址时，不会触发生命周期的钩子函数。
 
 例如：
@@ -43,10 +42,10 @@ const routes = [
 
 那么这个时候我们如何在页面切换之后请求接口获取数据呢？
 
-#### 2.1 路由导航守卫
+### 2.1 路由导航守卫
 第一个办法是使用组件内的路由守卫 <span class="important-font">beforeRouteUpdate</span>，该守卫将在路由发生变化但组件被复用时触发，所以只需要将每次页面切换时的逻辑放在 <span class="important-font">beforeRouteUpdate</span> 即可，例如在该守卫触发时请求数据等等，比较推荐 👍。
 
-#### 2.2 观察 $route 对象变化
+### 2.2 观察 $route 对象变化
 使用 watch 可以监听到当前路由对象的变化，从而做出响应：
 ```js
 const component = {
@@ -72,7 +71,7 @@ const component = {
 }
 ```
 
-#### 2.3 为 router-view 设置 key 属性
+### 2.3 为 router-view 设置 key 属性
 其本质是利用虚拟 DOM 在新旧节点对比时，通过 key 来对比两个节点是否相同的原理。
 ```html
 <router-view :key="$route.fullPath"></router-view>
@@ -80,17 +79,17 @@ const component = {
 优点是简单暴力，仅一句代码就搞定了。
 缺点是每次切换页面整个组件都会销毁再创建，浪费性能。
 
-### 3. 区分 Vuex 和 props 的使用边界
+## 3. 区分 Vuex 和 props 的使用边界
 通常在项目开发中：
 + 通用组件，通过 props 接收状态
 + 业务组件，通过 Vuex 接收状态
 
 并且通用组件的 props，要尽可能的详尽，至少指定其类型，清晰的 props 可以让人很快搞懂它的用法，并且如果 props 的类型不正确，Vue 也会在控制台进行报错，减少 bug 的产生。
 
-### 4. 为所有路由统一设置 query
+## 4. 为所有路由统一设置 query
 如果有需要为所有路由设置 query 的需求，那么有两种解决办法：
 
-#### 4.1 使用全局守卫 beforeEach
+### 4.1 使用全局守卫 beforeEach
 我们可以在全局守卫 <span class="important-font">beforeEach</span> 中，通过 next 函数控制下一个路由的跳转地址，那么我们就可以在跳转的时候在其中增加 query 参数，从而实现我们的需求，例如：
 ```js
 const query = { name: 'kcy' }
@@ -102,7 +101,7 @@ router.beforeEach((to, from, next) => {
 ```
 优点是无需组件内在做处理，做了全局统一的处理，但是这个方法有个缺点，就是每次切换路由的时候，<span class="important-font">beforeEach</span> 都会执行两次。
 
-#### 4.2 通过函数劫持
+### 4.2 通过函数劫持
 我们可以通过拦截 router.history.transitionTo 方法，在 vue-router 内部切换路由之前将参数添加到 query 中，使用方法如下：
 ```js
 const query = { name:'kcy' }
@@ -115,7 +114,7 @@ router.history.transitionTo = function (location, onComplate, onAbort) {
 }
 ```
 
-### 5. 避免 v-if 和 v-for 一起使用
+## 5. 避免 v-if 和 v-for 一起使用
 在日常开发时，为了过滤渲染列表中不需要渲染的元素时，可能有人会这样做：
 ```html
 <ul>
@@ -141,18 +140,18 @@ computed: {
 }
 ```
 
-### 6. 为组件样式设置作用域
+## 6. 为组件样式设置作用域
 因为 CSS 规则都是全局的，为了避免组件间 CSS 样式相互污染，推荐使用<span class="important-font"> scopted </span>，或者 <span class="important-font"> CSS Modules</span> 来设置组件样式的作用域。
 
 这两种方案都有对应覆盖组件库样式的语法，非常方便，此外，命名上推荐遵循 <span class="important-font"> BEM </span> 命名规则。
 
-### 7. 避免隐性的父子组建通信 🎯
+## 7. 避免隐性的父子组建通信 🎯
 避免隐性的父子组建通信，这一点真的十分重要，因为我在合作开发的时候，也有过同事使用隐性的父子组件通信的情况，这样就会<span class="important-font"> 直接导致代码可读性下降 </span>，如果同时业务逻辑也十分复杂的话，这段代码可能会让人自闭......
 
-### 8. 单文件组件的命名艺术
+## 8. 单文件组件的命名艺术
 命名的不规范虽然不会影响代码的正常运行，但是良好的命名规范能在绝大多数情况下提高项目的可读性和开发体验。
 
-#### 8.1 单文件组件名的大小写
+### 8.1 单文件组件名的大小写
 单文件组件的文件名推荐始终使用 <span class="important-font"> 大驼峰</span>，或者始终使用横线连接。
 
 ```js
@@ -162,7 +161,7 @@ components/
 |- my-component.vue
 ```
 
-#### 8.2 基础组件名
+### 8.2 基础组件名
 使用特定样式和约定的基础组件，应该全部以一个特定的前缀开头，例如 Base，el，App。这些组件可以为应用奠定一致的基础样式和行为。它们可能只包括了：
 + HTML 元素
 + 其他基础组件
@@ -198,7 +197,7 @@ components/
 |- BaseInput.vue
 ```
 
-#### 8.3 单例组件名
+### 8.3 单例组件名
 只拥有单个活跃实例的组件，<span class="important-font">文件名以 The 开头</span>，表示其唯一性。单例组件不代表全局只有一个，而是每个页面只使用一次，这些组件永远不接受 props，因为它是为你的应用定制的，如果发现有必要添加 props，就表明这其实是一个可复用的组件，只是在每个页面里只用了一次。
 ```js
 components/
@@ -207,7 +206,7 @@ components/
 |- TheSidebar.vue
 ```
 
-#### 8.4 紧密耦合的组件名
+### 8.4 紧密耦合的组件名
 如果和父组件紧密耦合的子组件应该以父组件名作为前缀命名。
 好：
 ```js
@@ -225,7 +224,7 @@ components/
 |- TodoButton.vue
 ```
 
-#### 8.5 组件名的单词顺序
+### 8.5 组件名的单词顺序
 
 不好：
 ```js

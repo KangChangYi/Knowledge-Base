@@ -1,4 +1,4 @@
-## JavaScript 数据结构和算法—数组整理
+# JavaScript 数据结构和算法—数组整理
 
 学 《JavaScript 数据结构和算法》—数组篇回顾及整理
 

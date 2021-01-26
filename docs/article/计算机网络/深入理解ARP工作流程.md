@@ -1,21 +1,21 @@
-## 『深入 TCP/IP 系列』 ARP 的工作流程
+# 『深入 TCP/IP 系列』 ARP 的工作流程
 
 > 2020-10-25
 
-## <span id="top" class="color-font">前言</span>
+## 前言
 
 本文是深入 TCP/IP 系列的第二篇文章，通过阅读本文可以解答以下问题：
 
 + 为什么同时需要 IP 和 MAC 地址？
 + 如何获取一台网络设备的 IP 或 MAC 地址？（ARP 协议）
 
-## <span class="color-font">什么是 ARP 协议</span>
+## 什么是 ARP 协议
 
 ARP 协议全称：<span class="color-font">**地址解析协议**</span> `Address Resolution Protocol`，工作于 `TCP/IP 分层` 的网络层中，它的作用就是以 `IP 地址` 为线索，找到下一个应该接受数据包的网络设备的 `MAC 地址`。
 
 如果和目标主机不在同一个链路上，可以使用 `ARP` 拿到下一跳路由器的 `MAC 地址`，后续再由路由器负责转发数据。
 
-## <span class="color-font">ARP 协议的工作机制</span>
+## ARP 协议的工作机制
 
 `ARP` 协议工作机制的核心，就是通过 <span class="color-font">**ARP 请求**</span> 以及 <span class="color-font">**ARP 响应**</span>，这两种类型的包，来获取 `MAC 地址`。
 
@@ -33,17 +33,16 @@ ARP 协议全称：<span class="color-font">**地址解析协议**</span> `Addre
 
 tip：`ARP` 请求包是通过广播发送的，如果同一链路中的其余主机也收到了这个包，但 `目标 IP 地址` 和自己的  `IP 地址` 不符时，则会丢弃该包。
 
-## <span class="color-font">ARP 缓存</span>
-
+## ARP 缓存
 如果每次发送数据包都要进行一次 `ARP 请求` 来获取 `MAC 地址`，会造成不必要的网络流量，所以 `ARP` 会把获取到的 `MAC 地址` 缓存一段时间。以 `IP` 作为键，`MAC 地址` 作为值记忆到一个 `ARP 缓存表` 中，下次再向同一个 `IP` 发送数据时，不再需要发送 `ARP 请求`，直接从 `缓存表` 中读取其 `MAC 地址` 即可。
 
 除了缓存之外，为了保证 `IP 地址` 和 `MAC 地址` 的映射关系发生变化时也能获得正确的 `MAC 地址`，`ARP 缓存表` 会有一个刷新时间，书上并没有提到 `ARP 缓存表`的刷新时间，搜索引擎得知刷新时间通常为 `180s`。
 
-## <span class="color-font">ARP 包格式</span>
+## ARP 包格式
 
 ![](/images/NetWork/ARP协议头格式.jpeg)
 
-## <span class="color-font">为什么网络通信同时需要 IP 地址和 MAC 地址？</span>
+## 为什么网络通信同时需要 IP 地址和 MAC 地址？
 
 <!-- 因为 MAC 地址并不具备层次性， -->
 
@@ -57,8 +56,6 @@ tip：`ARP` 请求包是通过广播发送的，如果同一链路中的其余�
 + 除去了 MAC 地址，尝试使用 IP 地址进行局域网传输：
 
 如果去除了 MAC 地址，局域网内一台主机向另一台主机发送数据只能通过广播的形式，这时候如果局域网内存在两个及以上的路由器，数据包就会被重复发送。（自行想象一个存在两个路由器的拓扑图）
-
-<span class="color-font"></span>
 
 <style>
 .color-font {

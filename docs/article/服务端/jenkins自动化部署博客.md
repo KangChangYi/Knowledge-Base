@@ -1,22 +1,22 @@
-## Jenkins 自动化部署博客
+# Jenkins 自动化部署博客
 
 使用 github + jenkins 实现自动化部署
 
-### 安装 Java 环境
+## 安装 Java 环境
 ```shell
 yum install java
 
 java -version
 ```
 
-### 安装 git
+## 安装 git
 ```shell
 yum install git
 
 git --version
 ```
 
-### 安装 jenkins
+## 安装 jenkins
 我这里直接将 jenkins 安装在了本地，没有用 docker 镜像部署 jenkins。
 
 第一次安装，需要导入 jenkins key，否则会无法找到 jenkins package。
@@ -32,14 +32,14 @@ rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 yum -y install jenkins
 ```
 
-### 启动 jenkins
+## 启动 jenkins
 ```shell
 service jenkins start
 ```
 
 启动完成后，使用 ip + 8080 端口访问，若无法访问，检查 8080 端口是否被占用，或者防火墙是否开放 8080 端口。
 
-### 配置 jenkins 权限
+## 配置 jenkins 权限
 
 ```shell
 vi /etc/sysconfig/jenkins
@@ -48,14 +48,14 @@ vi /etc/sysconfig/jenkins
 JENKINS_USER="root"
 ```
 
-### Github SHH
+## Github SHH
 生成服务器的公钥，添加到 Github SSH 中，以便正常拉取代码。
 
 ```shell
 ssh-keygen -t rsa -C "***@qq.com"
 ```
 
-### 配置 jenkins
+## 配置 jenkins
 在浏览器中打开 jenkins 后，创建用户。
 
 安装插件：
@@ -66,10 +66,10 @@ ssh-keygen -t rsa -C "***@qq.com"
 
 新建任务后，进入任务设置 -> 源码管理，进行配置。
 
-#### 配置 git 仓库地址
+### 配置 git 仓库地址
 ![任务源码管理](/images/devOps/jenkins-git.png)
 
-#### 从 Github 中获取 token
+### 从 Github 中获取 token
 先上到 Github。
 
 1. 进入 setting -> develop settings
@@ -100,7 +100,7 @@ ssh-keygen -t rsa -C "***@qq.com"
 
 提交代码 -> 触发 webhook 请求 -> jenkins 构建，一气呵成，大功告成。
 
-### 坑点
+## 坑点
 1. jenkins shell 脚本执行时，一直报 command not found，原因是环境变量和本机不一样。
 
 解法就是在 jenkins 系统设置里加上环境变量：

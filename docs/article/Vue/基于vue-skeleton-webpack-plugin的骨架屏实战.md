@@ -1,6 +1,6 @@
-## 基于 vue-skeleton-webpack-plugin 的骨架屏实战
+# 基于 vue-skeleton-webpack-plugin 的骨架屏实战
 
-# 前言
+## 前言
 
 最近在实习，手头上的项目用到了骨架屏，回顾梳理一下。
 
@@ -10,10 +10,10 @@
 
 ![](/images/vue-skeleton-webpack-plugin骨架屏实战/skeleton-performance2.gif)
 
-# 什么是骨架屏
+## 什么是骨架屏
 <b>骨架屏</b>，英文 Skeleton screen，是指在页面开始渲染之前的白屏时间内，先让用户看到即将要展现页面的“骨架”，页面渲染完成之后再将它替换掉，起到一个从<span class="important-font"> 白屏 → 渲染完成 </span>过程中的过渡作用，它可以有效减少用户的感知时间，让用户“感觉上”认为打开页面比较快（相比较于完整的白屏时间）。
 
-# 实现
+## 实现
 本文主要围绕一个开源的 Webpack 插件 [vue-skeleton-webpack-plugin](https://github.com/lavas-project/vue-skeleton-webpack-plugin)，来实现在 Vue 项目中加入骨架屏。
 > 由于项目对骨架屏的需求不同，相应的代码也会不一样。
 > 本文所实现的骨架屏是<span class="important-font"> 基于 Vue-cli 3.x 搭建的项目 </span>，根据的不同路由，显示不同的骨架屏，如需其他用法详见开源插件。
@@ -163,7 +163,7 @@ export default {
 
 这里如果不加骨架屏的话就是 738ms 的白屏时间，我们已经通过骨架屏优化了一些白屏时间🏄。
 
-### 最后
+## 最后
 
 [vue-skeleton-webpack-plugin](https://github.com/lavas-project/vue-skeleton-webpack-plugin) 是较为初级的骨架屏方案，相信大家也可以马上想到许多缺点。
 
@@ -174,7 +174,7 @@ export default {
 
 由于在本人的项目中使用到了<span class="important-font"> postcss-px2rem </span> 自动 px 转 rem，所以避开了一些缺点。
 
-### 其他方法
+## 其他方法
 
 此外还有许多使用骨架屏的方法：
 + [page-skeleton-webpack-plugin](https://github.com/ElemeFE/page-skeleton-webpack-plugin) 饿了么开源的自动生成骨架屏生成插件。

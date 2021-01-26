@@ -1,5 +1,6 @@
 ## CSS
-+ [BFC](/article/CSS/BFC.md)
+<!-- + [BFC](/article/CSS/BFC.md) -->
++ [Grid布局](/article/CSS/Grid布局.md)
 + [块级元素与行内元素](/article/CSS/块级元素与行内元素.md)
 + [整理一篇CSS选择器](/article/CSS/整理一篇CSS选择器.md)
 + [盒子模型](/article/CSS/盒子模型.md)
@@ -31,12 +32,10 @@
 + [TCP三次握手和四次挥手](/article/计算机网络/TCP三次握手和四次挥手.md)
 + [图解http（一）](/article/计算机网络/图解http（一）.md)
 ## 服务端
++ [jenkins 自动化部署博客](/article/服务端/jenkins自动化部署博客.md)
++ [jenkins 自动化部署博客 docker 版](/article/服务端/jenkins自动化部署博客docker版.md)
 + [Linux入门](/article/服务端/Linux入门.md)
 + [nginx入门](/article/服务端/nginx入门.md)
-## devOps
-+ [jenkins 自动化部署博客](/article/devOps/jenkins自动化部署博客.md)
-+ [jenkins 自动化部署博客 docker 版](/article/devOps/jenkins自动化部署博客docker版.md)
-
 ## 自测题目集合
 + [TCP/IP自测题](/article/自测题目集合/TCPIP自测题.md)
 
