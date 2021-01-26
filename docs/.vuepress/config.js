@@ -11,8 +11,9 @@ module.exports = {
         target: "_blank",
       },
     ],
+    lastUpdated: "上次更新",
+    smoothScroll: true,
     sidebarDepth: 2,
     sidebar: require("../siderbarList.json"),
   },
 };
- 
