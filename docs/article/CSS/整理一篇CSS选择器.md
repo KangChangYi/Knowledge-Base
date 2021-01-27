@@ -39,7 +39,7 @@ A 和 B 字色都变红
 |:-- |:-- |
 | <div style="color:#F05053">E[ att ]</div> | 选择带有指定属性的 E 元素 |
 | <div style="color:#F05053">E[ att = val ]</div> | 选择带有指定属性且值等于 val 的 E 元素 |
-| <div style="color:#F05053">E[ att ~= val ]</div> | 选择属性值中包含 val 的 E 元素 |
+| <div style="color:#F05053">E[ att ~= val ]</div> | 选择属性值中某一项是 val 的 E 元素 |
 | <div style="color:#F05053">E[ att \= val ]</div> | 选择属性值开头是 val 的 E 元素，必须是整个单词 |
 | <div style="color:#F05053">E[ att ^= val ]</div> | 选择属性值开头是 val 的 E 元素 |
 | <div style="color:#F05053">E[ att %= val ]</div> | 选择属性值结尾是 val 的 E 元素 |
@@ -52,6 +52,16 @@ A 和 B 字色都变红
 
 ## 伪类选择器
 
+1. 伪类选择器前可以紧跟一个选择器用于指定伪类选择器的选择范围，我称它为前置选择器，若伪类选择器不包含前置选择器，则前置选择器默认为 *，即范围是所有元素，例如 `:first-child { ... }`（匹配所有是父元素第一个子元素的元素）
+
+2. 伪类选择器和它的前置选择器中间不能有空格，否则会被判断为包含选择器，例如
+
+`div:first-child { ... }`
+
+`div :first-child { ... }`
+
+上面两个选择器它们不是同一个意思。
+
 | <div style="font-weight:bold">选择器</div> | <div style="font-weight:bold">描述</div> |
 |:-- |:-- |
 | <div style="color:#F05053">:link</div>    | 超链接在未访问前的样式 |
@@ -63,20 +73,18 @@ A 和 B 字色都变红
 | <div style="color:#F05053">:enabled</div> | 处于可用状态的元素。(一般应用于表单元素) |
 | <div style="color:#F05053">:disabled</div>| 处于禁用状态的元素。(一般应用于表单元素) |
 | <div style="color:#F05053">:empty</div>   | 没有子元素（包括text节点）的元素 |
-| <div style="color:#F05053">:root</div>    | 匹配E元素在文档的根元素。在HTML中，根元素永远是HTML |
+| <div style="color:#F05053">:root</div>    | 匹配文档的根元素。在 HTML 中，根元素永远是 HTML（若 style 设置 scoped 了，则会无法选中 html） |
 | <div style="color:#F05053">:not(s)</div>    | 匹配不含有 s 选择器的元素 |
-| <div style="color:#F05053">:first-child</div> | 匹配元素的第一个子元素|
-| <div style="color:#F05053">:last-child</div> | 匹配元素的最后一个子元素 |
-| <div style="color:#F05053">:only-child</div> | 匹配元素仅有的一个子元素 |
-| <div style="color:#F05053">:nth-child(n)</div> | 匹配元素的第n个子元素 |
-| <div style="color:#F05053">:nth-last-child(n)</div> | 匹配元素的倒数第n个子元素E |
-| <div style="color:#F05053">:first-of-type</div> | 匹配同类型中的第一个同级兄弟元素 |
-| <div style="color:#F05053">:last-of-type</div> | 匹配同类型中的最后一个同级兄弟元素 |
-| <div style="color:#F05053">:only-of-type</div> | 匹配同类型中的唯一的一个同级兄弟元素E |
-| <div style="color:#F05053">:nth-of-type(n)</div> | 匹配同类型中的第n个同级兄弟元素 |
-| <div style="color:#F05053">:nth-last-of-type(n)</div> | 匹配同类型中的倒数第n个同级兄弟元素E |
-
-🤮 令人窒息，我感觉有些选择器这辈子都不会用到
+| <div style="color:#F05053">:first-child</div> | 匹配是父元素中第一个子元素的元素 |
+| <div style="color:#F05053">:last-child</div> | 匹配是父元素的最后一个子元素的元素 |
+| <div style="color:#F05053">:only-child</div> | 匹配是父元素唯一子元素的元素 |
+| <div style="color:#F05053">:nth-child(n)</div> | 匹配是父元素的第 n 个子元素的元素 |
+| <div style="color:#F05053">:nth-last-child(n)</div> | 匹配是父元素的倒数第 n 个子元素的元素 |
+| <div style="color:#F05053">:first-of-type</div> | 匹配同级且同类型中的第一个元素 |
+| <div style="color:#F05053">:last-of-type</div> | 匹配同级且同类型中的最后一个元素 |
+| <div style="color:#F05053">:only-of-type</div> | 匹配是同级且同类型中唯一的元素 |
+| <div style="color:#F05053">:nth-of-type(n)</div> | 匹配同级且同类型中的第 n 个元素 |
+| <div style="color:#F05053">:nth-last-of-type(n)</div> | 匹配同级且同类型中的倒数第 n 个元素 |
 
 > 关于 <span style="color:#F05053">:not()</span> 的用法：
 > 假定有个列表，每个列表项都有一条底边线，但是最后一项不需要底边线。
