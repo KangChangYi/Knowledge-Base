@@ -16,4 +16,5 @@ module.exports = {
     sidebarDepth: 2,
     sidebar: require("../siderbarList.json"),
   },
+  plugins: ["@vuepress/back-to-top"],
 };
