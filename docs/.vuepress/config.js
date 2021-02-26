@@ -4,17 +4,23 @@ module.exports = {
   base: "/",
   themeConfig: {
     nav: [
-      { text: "Guide", link: "/guide.md" },
+      { text: "知识点", link: "/article/" },
+      { text: "数据结构与算法", link: "/algorithms/" },
+      { text: "关于我", link: "/my/" },
       {
         text: "GitHub",
         link: "https://github.com/KangChangYi",
         target: "_blank",
       },
     ],
+    sidebarDepth: 2,
+    sidebar: {
+      "/article/": require("../siderbarList.json"),
+      "/algorithms/": [""],
+      "/my/": [""],
+    },
     lastUpdated: "上次更新",
     smoothScroll: true,
-    sidebarDepth: 2,
-    sidebar: require("../siderbarList.json"),
   },
   plugins: ["@vuepress/back-to-top"],
 };
