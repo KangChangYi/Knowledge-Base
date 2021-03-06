@@ -13,6 +13,7 @@
 + [你不知道的JavaScript下卷（二）](/article/JavaScript/你不知道的JavaScript下卷（二）.md)
 
 ## Vue
++ [computed 和 watch 的区别](/article/Vue/computed和watch的区别.md)
 + [Vue原理之变化侦测](/article/Vue/Vue原理之变化侦测.md)
 + [Vue最佳实践_风格规范整理](/article/Vue/Vue最佳实践_风格规范整理.md)
 + [基于vue-skeleton-webpack-plugin的骨架屏实战](/article/Vue/基于vue-skeleton-webpack-plugin的骨架屏实战.md)
