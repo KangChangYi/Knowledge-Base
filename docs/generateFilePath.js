@@ -23,7 +23,7 @@ function generatePathJSON(path) {
 function generate(docsDirList) {
   docsDirList = docsDirList.filter((item) => !item.includes("."));
   let siderbarJSON = createSiderbarJson(docsDirList);
-  createGuideJson(docsDirList);
+  // createGuideJson(docsDirList);
 
   return siderbarJSON;
 }
