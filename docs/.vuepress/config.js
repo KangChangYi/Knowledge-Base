@@ -1,3 +1,5 @@
+const { generatePathJSON } = require("../generateFilePath.js");
+
 module.exports = {
   title: "KangChangYi",
   description: "Step by step",
@@ -15,8 +17,8 @@ module.exports = {
     ],
     sidebarDepth: 2,
     sidebar: {
-      "/article/": require("../siderbarList.json"),
-      "/algorithms/": [""],
+      "/article/": generatePathJSON("article"),
+      "/algorithms/": generatePathJSON("algorithms"),
       "/my/": [""],
     },
     lastUpdated: "上次更新",
