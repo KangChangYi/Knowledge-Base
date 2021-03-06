@@ -49,7 +49,7 @@ My name is 康昶毅(Turner), born in HangZhou, China, and graduated from Shaoxi
 
 Now I'm working for DataCreating 🏢.
 
-### Some Photo
+### Some Photo（照骗）
 
 ![](/images/my/myPhoto.jpg)
 ![](/images/my/myPhoto2.png)
