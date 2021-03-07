@@ -14,7 +14,8 @@
 
 ## Vue
 + [computed 和 watch 的区别](/article/Vue/computed和watch的区别.md)
-+ [provide、inject的实现原理](/article/Vue/provide、inject的实现原理.md)
++ [provide、inject 的实现原理](/article/Vue/provide、inject的实现原理.md)
++ [弥补 defineProperty 缺陷的 $set、$delete](/article/Vue/弥补defineProperty缺陷的$set、$delete.md)
 + [Vue原理之变化侦测](/article/Vue/Vue原理之变化侦测.md)
 + [Vue最佳实践_风格规范整理](/article/Vue/Vue最佳实践_风格规范整理.md)
 + [基于vue-skeleton-webpack-plugin的骨架屏实战](/article/Vue/基于vue-skeleton-webpack-plugin的骨架屏实战.md)
